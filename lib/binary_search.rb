@@ -19,13 +19,15 @@ class Search
   end
 
   def binary_search(elem,array)
-    middle_index = (array.size/2).floor
-    if array[middle_index] == elem
-      return array[middle_index]
+    middle_index = (array.size/2)
+    if array[middle_index] == elem ##Base case - other version == return array[middle_index]                                                        #if array.length < 2
+      return true
     elsif array[middle_index] < elem
       binary_search(elem,array[middle_index..-1])
     elsif array[middle_index] > elem
       binary_search(elem,array[0..middle_index - 1])
+    else
+      false
     end
   end
 end
